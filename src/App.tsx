@@ -1,23 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-// import useMousePosition from "~/hooks/useMousePosition";
-
-// import EyeFollow from "~/components/EyeFollow";
+import Home from "./pages/Home";
+import ProjectPage from "./pages/ProjectPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  // const mousePosition = useMousePosition();
   return (
-    <div className="container">
-      <h1>Heyyyyyy</h1>
-      {/* <p>
-        Your cursor position:
-        <br />
-        {JSON.stringify(mousePosition)}
-      </p> */}
-      {/* <EyeFollow mousePosition={mousePosition} /> */}
-      {/* <marquee className={styles.banner}>
-        This site is a work in progress. Thank you for being here!
-      </marquee> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:projectId" element={<ProjectPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 

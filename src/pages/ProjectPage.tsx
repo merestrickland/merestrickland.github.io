@@ -1,33 +1,44 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { findProject } from "../data/projects";
 
 export default function ProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
+  const project = projectId ? findProject(projectId) : undefined;
+
+  if (!project) {
+    return (
+      <>
+        <h1>Project not found</h1>
+        <Link to="/">← Back to home</Link>
+      </>
+    );
+  }
 
   return (
-    <div className="container">
-      <nav>
-        <Link to="/">← Back to Portfolio</Link>
-      </nav>
+    <>
+      {project.outlineImage && (
+        <img src={project.outlineImage} alt="" width={80} height={80} />
+      )}
+      <h1>{project.title}</h1>
+      {project.tagline && <p>{project.tagline}</p>}
 
-      <main>
-        <h1>Project: {projectId}</h1>
-        <p>This is a placeholder for your {projectId} project page.</p>
+      <section>
+        <h2>Technical Highlights</h2>
+        <ul>
+          {project.technicalHighlights?.map((highlight) => (
+            <li key={highlight}>{highlight}</li>
+          ))}
+        </ul>
+      </section>
 
-        {/* Add your project content here */}
-        <section>
-          <h2>About this project</h2>
-          <p>Describe your project here...</p>
-        </section>
-
-        <section>
-          <h2>Technologies used</h2>
-          <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Vite</li>
-          </ul>
-        </section>
-      </main>
-    </div>
+      <section>
+        <h2>Stack</h2>
+        <ul>
+          {project.stack?.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }

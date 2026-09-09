@@ -1,0 +1,28 @@
+.bio {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.photo {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+  margin: 0 auto 1.75rem;
+}
+
+.copy {
+  text-align: left;
+}
+
+.heading {
+  margin: 0 0 1.25rem;
+}
+
+.copy p {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.copy p:last-child {
+  margin-bottom: 0;
+}

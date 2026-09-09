@@ -1,0 +1,18 @@
+:root {
+  --navy: #0a1f44;
+  --cream: #ebd7c7;
+  --orange: #d64100;
+  --thin-stripe-height: 4px;
+  --thick-stripe-height: 24px;
+
+  --font-body: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-display: "Staatliches", "Arial Narrow", "Helvetica Neue", sans-serif;
+
+  --text-on-navy: var(--cream);
+  --text-on-cream: var(--navy);
+  --link-color: #1a4a8a;
+  --link-hover: #0a1f44;
+
+  /* --max-width: 720px; */
+  --page-padding: 1.5rem;
+}

@@ -1,20 +1,12 @@
-import { Link } from "react-router-dom";
+import ProjectList from "../components/ProjectList";
+import SiteLinks from "../components/SiteLinks";
 
 export default function Home() {
   return (
-    <div className="container">
-      <h1>Meredith Strickland</h1>
-      <p>Welcome to my portfolio</p>
-
-      <section>
-        <h2>Projects</h2>
-        <div className="project-links">
-          <Link to="/projects/example" className="project-link">
-            Example Project
-          </Link>
-          {/* Add more project links here */}
-        </div>
-      </section>
-    </div>
+    <>
+      <h1 className="display-heading site-title">Meredith Strickland</h1>
+      <ProjectList />
+      <SiteLinks />
+    </>
   );
 }

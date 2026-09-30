@@ -15,7 +15,7 @@
 } */
 
 .container {
-  /* max-width: var(--max-width); */
+  max-width: 72rem;
   margin: 0 auto;
   padding: var(--page-padding);
 }
@@ -34,13 +34,15 @@
   margin-bottom: 1.5rem;
 }
 
-.nav a {
-  color: var(--link-color);
-  font-weight: 500;
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   text-decoration: none;
+  color: inherit;
 }
 
-.nav a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
+.emoji {
+  font-size: 1.75rem;
+  line-height: 1;
 }

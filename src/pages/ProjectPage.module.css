@@ -1,0 +1,107 @@
+.headingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.65rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.external {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.external:hover,
+.external:focus-visible {
+  color: var(--orange);
+}
+
+.externalIcon {
+  display: block;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.copy h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.75rem;
+}
+
+.copy {
+  max-width: 40rem;
+}
+
+.copy p {
+  margin: 0 0 1.5rem;
+}
+
+.copy section {
+  margin-bottom: 1.75rem;
+}
+
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.highlights li {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.highlights li + li {
+  margin-top: 0.55rem;
+}
+
+.highlightEmoji {
+  line-height: 1.5;
+}
+
+.back {
+  margin-top: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  color: var(--orange);
+}
+
+.backEmoji {
+  font-size: 1.75rem;
+  line-height: 1;
+}

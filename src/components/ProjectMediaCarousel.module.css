@@ -1,0 +1,140 @@
+.carousel {
+  margin: 1.5rem 0 2rem;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.enterNext {
+  animation: slideInFromRight 420ms ease-out both;
+}
+
+.exitNext {
+  animation: slideOutToLeft 420ms ease-out both;
+}
+
+.enterPrev {
+  animation: slideInFromLeft 420ms ease-out both;
+}
+
+.exitPrev {
+  animation: slideOutToRight 420ms ease-out both;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enterNext,
+  .exitNext,
+  .enterPrev,
+  .exitPrev {
+    animation: none;
+  }
+}
+
+.media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caret {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: var(--cream);
+  background: rgb(10 31 68 / 0.5);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.caretPrev {
+  left: 0.75rem;
+}
+
+.caretNext {
+  right: 0.75rem;
+}
+
+.caret:hover,
+.caret:focus-visible {
+  background: rgb(10 31 68 / 0.72);
+}
+
+.caretIcon {
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--navy);
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.dotActive {
+  opacity: 1;
+  background: var(--orange);
+}

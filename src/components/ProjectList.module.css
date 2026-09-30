@@ -1,6 +1,6 @@
 .section {
-  margin-top: 2rem;
   max-width: 40rem;
+  margin: 2rem auto 0;
 }
 
 .heading {

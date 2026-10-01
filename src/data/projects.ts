@@ -29,8 +29,6 @@ export const professionalProjects: ProjectItem[] = [
     id: "applied-intuition",
     title: "Applied Intuition",
     liveUrl: "https://www.appliedintuition.com",
-    previewImage: "/images/projects/applied-intuition/homepage.png",
-    // outlineImage: "/images/projects/applied-intuition-outline.svg",
     tagline:
       "Corporate marketing site on Next.js and Sanity CMS — page-builder pages, a newsroom, and internationalization across English, Japanese, Korean, and Arabic.",
     technicalHighlights: [
@@ -58,6 +56,27 @@ export const professionalProjects: ProjectItem[] = [
       "Sanity CMS",
       "Tailwind CSS",
       "Storybook",
+    ],
+    media: [
+      {
+        type: "image",
+        src: "/images/projects/applied-intuition/01_applied_intuition.jpg",
+        alt: "Applied Intuition screenshot",
+      },
+      {
+        type: "image",
+        src: "/images/projects/applied-intuition/02_applied_intuition.jpg",
+        alt: "Applied Intuition screenshot",
+      },
+      {
+        type: "image",
+        src: "/images/projects/applied-intuition/03_applied_intuition.jpg",
+        alt: "Applied Intuition screenshot",
+      },
+      {
+        type: "video",
+        src: "/images/projects/applied-intuition/applied_intuition_walkthrough.mp4",
+      },
     ],
   },
   {
@@ -152,34 +171,54 @@ export const professionalProjects: ProjectItem[] = [
       "pnpm",
     ],
   },
+  */
   {
     id: "level-home",
     title: "Level Home",
+    liveUrl: "https://level.co",
     tagline:
-      "Marketing and e-commerce site for a smart lock brand, built on Next.js and Shopify with scroll-driven product storytelling.",
+      "Marketing and e-commerce site for a smart lock brand — Next.js and Shopify product pages alongside scroll-driven story pages.",
     technicalHighlights: [
-      "Architected a hybrid static-export deployment where Next.js pages ship alongside Craft CMS — with a custom build pipeline that extracts header/footer HTML via JSDOM, compiles scoped Tailwind CSS for Twig templates, and minifies standalone JS for shared global navigation across both platforms",
-      "Integrated Shopify Storefront API for headless commerce: build-time product/collection generation, client-side cart with cookie persistence, variant selection with metafield-driven upsells and cross-sells, and rich text rendering from Shopify metaobjects",
-      "Built a reusable GSAP animation system with scroll-pinned panel timelines, data-attribute-driven parallax and reveal effects, and responsive matchMedia breakpoints — powering a multi-scene homepage and long-form product story pages for flagship locks",
-      "Delivered flagship product story pages (Smart Deadbolt, Invisible Lock, Keypad) as immersive scroll-driven marketing experiences with quick-buy modals, media annotations, and Bazaarvoice review integration",
-      "Automated CI/CD with GitHub Actions: static export on push, artifact sync to a compiled deploy repo, and Shopify webhook-triggered rebuilds to keep product catalog pages in sync with the store",
+      {
+        emoji: "🛒",
+        text: "Shipped Shopify cart and product-page details: variant swatches, quantity limits, a cart loading state, and discount-code error handling — so buyers could finish a purchase without a silent fail",
+      },
+      {
+        emoji: "🏷️",
+        text: "Moved product badges from a single Shopify tag to per-variant metafields, with fallbacks for product-level tags, mixed badge/no-badge variants, and pre- vs post-selection — so one material finish could have a sale badge and another could have nothing, without the grid and PDP disagreeing",
+      },
+      {
+        emoji: "⭐",
+        text: "Wired Bazaarvoice ratings onto product detail pages so reviews sat on the buy path instead of a third-party widget silo",
+      },
+      {
+        emoji: "🗺️",
+        text: "Shipped site-wide SEO and nav work (canonicals, sitemap, story-page headings, careers) so marketing and shop URLs stayed crawlable after the rebrand",
+      },
     ],
-    stack: [
-      "Next.js 14",
-      "React 18",
-      "Tailwind CSS 3",
-      "GSAP",
-      "Shopify Storefront API",
-      "GraphQL",
-      "Cloudinary",
-      "Storybook",
-      "Zustand",
-      "GitHub Actions",
-      "Craft CMS",
-      "Netlify",
+    stack: ["Next.js", "React", "Tailwind CSS", "Shopify Storefront API"],
+    media: [
+      {
+        type: "image",
+        src: "/images/projects/level/01_level.jpg",
+        alt: "Level Home screenshot",
+      },
+      {
+        type: "image",
+        src: "/images/projects/level/02_level.jpg",
+        alt: "Level Home screenshot",
+      },
+      {
+        type: "image",
+        src: "/images/projects/level/03_level.jpg",
+        alt: "Level Home screenshot",
+      },
+      {
+        type: "video",
+        src: "/images/projects/level/level_walkthrough.mp4",
+      },
     ],
   },
-  */
   /*
   {
     id: "privy-auth-demo",

@@ -11,26 +11,27 @@ export default function Bio() {
         height={1600}
       />
       <div className={styles.copy}>
-        <h1 className={styles.heading}>Hi, I&apos;m Meredith.</h1>
+        {/* <h1 className={styles.heading}>Hi, I&apos;m Meredith.</h1> */}
         <p>
-          I'm a frontend engineer with six years of experience, working
-          primarily in React, Next.js, TypeScript, Tailwind, and Node. Before
-          going through a fullstack coding bootcamp in 2019, I spent eight years
-          in architecture, where I learned to hold a high standard for quality,
-          from the big picture down to the smallest details. That's the standard
-          I bring as a developer, whether I'm thinking through a system or
-          polishing something a user might never consciously notice but would
-          still feel if it were off.
+          Hi, I’m Meredith, and this year I broke my arm. I’m also a frontend
+          web developer, looking for a job! I primarily work in React and
+          Next.js, but I’m always open to learning new things and exploring
+          different stacks.
         </p>
         <p>
-          I thrive in collaborative environments, and I'm looking to join an
-          in-house team where I can invest long-term in product evolution and
-          team success.
+          Before I was a coder, I grew up in New Orleans, where I developed a
+          love for architecture and historic preservation. I studied
+          architecture at Bennington College in Vermont, and after graduating I
+          worked in those fields both in New Orleans and New York.
         </p>
         <p>
-          In my spare time I like to sew, bird, read, and go jogging in Prospect
-          Park. I live in Brooklyn with my partner, and we are currently on
-          season 16 of Grey's Anatomy.
+          In 2019, I went through a full stack coding bootcamp, and got my first
+          job as a developer in 2020. Since then I’ve worked with several
+          creative agencies building out component libraries, web-based apps,
+          e-commerce sites, and CMS-driven marketing sites. I’ve brought a lot
+          of projects from stages 0 to 1, and now looking to go in-house where I
+          can invest in a product long-term and experience the full software
+          development lifecycle.
         </p>
       </div>
     </article>

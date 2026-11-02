@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ExternalLinkIcon from "../components/ExternalLinkIcon";
 import ProjectMediaCarousel from "../components/ProjectMediaCarousel";
 import Tag from "../components/Tag";
@@ -10,12 +10,7 @@ export default function ProjectPage() {
   const project = projectId ? findProject(projectId) : undefined;
 
   if (!project) {
-    return (
-      <>
-        <h1>Project not found</h1>
-        <Link to="/">← Back to home</Link>
-      </>
-    );
+    return <h1>Project not found</h1>;
   }
 
   return (
@@ -76,15 +71,6 @@ export default function ProjectPage() {
             </section>
           )}
       </div>
-
-      <nav className={styles.back}>
-        <Link to="/" className={styles.backLink}>
-          <span className={styles.backEmoji} aria-hidden="true">
-            👈🏻
-          </span>
-          Back to portfolio
-        </Link>
-      </nav>
     </>
   );
 }

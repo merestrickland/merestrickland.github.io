@@ -13,8 +13,18 @@ export default function SiteLinks() {
       {siteLinks.map((link) => {
         const className = `${styles.link} ${"large" in link && link.large ? styles.large : ""}`;
 
+        const opensInNewTab = !link.href.startsWith("mailto:");
+
         return isExternal(link.href) ? (
-          <a key={link.href} className={className} href={link.href}>
+          <a
+            key={link.href}
+            className={className}
+            href={link.href}
+            {...(opensInNewTab && {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            })}
+          >
             {link.label}
           </a>
         ) : (

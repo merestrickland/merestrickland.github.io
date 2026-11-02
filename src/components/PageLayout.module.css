@@ -31,18 +31,21 @@
 } */
 
 .nav {
-  margin-bottom: 1.5rem;
+  padding: var(--page-padding) var(--page-padding) 0;
 }
 
-.homeLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.emoji {
-  font-size: 1.75rem;
+.logo {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
   line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.logo:hover {
+  color: var(--navy);
 }

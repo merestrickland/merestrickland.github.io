@@ -83,25 +83,3 @@
 .highlightEmoji {
   line-height: 1.5;
 }
-
-.back {
-  margin-top: 2rem;
-}
-
-.backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.backLink:hover,
-.backLink:focus-visible {
-  color: var(--orange);
-}
-
-.backEmoji {
-  font-size: 1.75rem;
-  line-height: 1;
-}

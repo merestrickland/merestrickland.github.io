@@ -34,19 +34,19 @@ export const professionalProjects: ProjectItem[] = [
     technicalHighlights: [
       {
         emoji: "🧱",
-        text: "Built a typed page-builder that maps Sanity blocks to React components, with TypeScript failing the build if a block has no UI — editors assemble pages in the CMS without a deploy, and missing blocks don’t silently ship blank",
+        text: "Built out the page-builder components (sections) the marketing team uses to populate pages, and connected them to Sanity's content editor so they can publish new pages without developer input.",
       },
       {
-        emoji: "⚙️",
-        text: "Worked in a GROQ code-generation pipeline instead of hand-maintaining giant query strings, so a schema change flows through to typed component props instead of drifting out of sync",
+        emoji: "🎨",
+        text: "Built a separate site for brand guidelines to document best practices for using the logo, colors, type, and photography. In Sanity the whole brand site is one document, with a field for each section. The team edits that document directly, and a login keeps the site off the public website.",
+      },
+      {
+        emoji: "📰",
+        text: "Built out the newsroom and article templates, which includes article index page, pages for each story, and rich text with headings, quotes, images, links, and tables. Authors and articles are their own documents, so an author is written once and credited on any story, and an article can be featured on other pages without copying it.",
       },
       {
         emoji: "🌍",
-        text: "Kept translations in Sanity with English fallback, then made Arabic opt-in per document rather than a full site locale — Middle East pages could ship with RTL without advertising /ar URLs that 404",
-      },
-      {
-        emoji: "👁️",
-        text: "Shipped Sanity Presentation and draft mode so editors preview unpublished pages on the real site before publish, instead of guessing from the Studio form",
+        text: "Shipped the site in Japanese, Korean, and Arabic alongside English. Translations are stored per field in Sanity rather than as a copy of each page. English stays at the root and other languages come from a URL prefix (e.g. /ja, /kr, /ar). Arabic is switched on page by page, so /ar URLs and hreflang only exist where a translation does, links fall back to English everywhere else, and the layout mirrors for right-to-left reading.",
       },
     ],
     stack: [
@@ -88,23 +88,23 @@ export const professionalProjects: ProjectItem[] = [
     technicalHighlights: [
       {
         emoji: "🔀",
-        text: "Built a branching multi-step seller flow where answers change which slides come next, while still tracking progress — so sellers could finish a valid offer even when the path got longer or shorter mid-funnel",
+        text: "Built the question flow that turns a seller’s car into an offer, where each answer shapes what comes next, like a VIN filling in the year, make, and model. Answers that conflict, like a car with no keys marked as drivable, trigger a clarifying question so bad offers are caught before submission. Progress is saved in the URL and browser, so a refresh picks up where the seller left off.",
       },
+      // {
+      //   emoji: "📋",
+      //   text: "Built what a seller sees after accepting: the status of their sale, the pickup window and tow carrier, tips for getting the title ready, and the option to cancel. The same page adapts to each stage of the sale, so sellers always know what happens next",
+      // },
+      // {
+      //   emoji: "🛠️",
+      //   text: "Built the tools behind the scenes. Peddle staff can search offers and adjust prices, partner accounts only see the offers they should, and a seller who starts a second offer for the same car gets pointed back to the one they already have",
+      // },
       {
-        emoji: "📦",
-        text: "Kept offer state in React Context rather than a global store: the draft only lived inside the funnel tree, which kept the rest of the app from re-rendering on every answer and made the flow easier to reason about",
-      },
-      {
-        emoji: "💾",
-        text: "Persisted drafts with LocalForage instead of localStorage so we could store a larger, structured offer object asynchronously (IndexedDB under the hood) — sellers could refresh mid-funnel without starting over",
-      },
-      {
-        emoji: "⚠️",
-        text: "Added a side-effects layer for conflicting answers (title, keys, drivability) with clarifying modals, so bad combinations got caught before submit",
+        emoji: "📈",
+        text: "Added tracking across the question flow, so the team could see at which point a potential seller dropped off, not just whether they finished. Sent accepted offers to Facebook with seller details to match sales to ads, and measured A/B tests by real outcomes like accepted offers. All of it goes through one tracking layer, so a component fires a single event and every analytics tool receives it.",
       },
       {
         emoji: "🧩",
-        text: "Extracted Apex as a packaged Storybook design system used by Seller, Publisher Embed, and marketing — it became the shared UI template instead of three diverging component sets",
+        text: "Packaged Apex, Peddle’s in-house design system, as a private npm package shared by the seller flow, marketing website, and mini-flow widget. Beyond UI components, it holds shared logic like sign-in, API calls, and analytics, so a fix ships to every app at once instead of being copied into each one. Every pull request publishes a preview version that an app can install and try before release, and Storybook serves as both the documentation and the basis for visual tests that catch unintended UI changes.",
       },
     ],
     stack: [
@@ -181,19 +181,19 @@ export const professionalProjects: ProjectItem[] = [
     technicalHighlights: [
       {
         emoji: "🛒",
-        text: "Shipped Shopify cart and product-page details: variant swatches, quantity limits, a cart loading state, and discount-code error handling — so buyers could finish a purchase without a silent fail",
+        text: "Shipped Shopify cart and product-page details: variant swatches, quantity limits, a cart loading state, and discount-code error handling, so buyers can finish a purchase without a silent fail.",
       },
       {
         emoji: "🏷️",
-        text: "Moved product badges from a single Shopify tag to per-variant metafields, with fallbacks for product-level tags, mixed badge/no-badge variants, and pre- vs post-selection — so one material finish could have a sale badge and another could have nothing, without the grid and PDP disagreeing",
+        text: "Moved product badges, like a sale label, from one tag per product to one per finish, so one finish can be on sale while another isn’t. Older product-level tags still work as a fallback, and the product grid and product page always show the same badge.",
       },
       {
         emoji: "⭐",
-        text: "Wired Bazaarvoice ratings onto product detail pages so reviews sat on the buy path instead of a third-party widget silo",
+        text: "Added Bazaarvoice customer reviews to product pages and added targeted CSS styling to match the site instead of the widget’s defaults. Each product page also carries structured data with its price, shipping, and rating, so Google can show stars and price right in search results.",
       },
       {
         emoji: "🗺️",
-        text: "Shipped site-wide SEO and nav work (canonicals, sitemap, story-page headings, careers) so marketing and shop URLs stayed crawlable after the rebrand",
+        text: "Made the rebuilt site easy for search engines to read. Each product and category has one canonical URL, so a page reached through different paths isn’t counted as a duplicate, and a lock’s story page and its buy view are linked as one series instead of competing in search. Also added proper headings to story pages and an HTML sitemap linked from the footer.",
       },
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "Shopify Storefront API"],
@@ -262,19 +262,15 @@ export const professionalProjects: ProjectItem[] = [
     technicalHighlights: [
       {
         emoji: "🚚",
-        text: "Moved the existing Docusaurus docs into VitePress in the product monorepo, so guide content lived next to the app instead of in a separate docs repo",
+        text: "Moved the existing Docusaurus docs into VitePress in the product monorepo, so guide content lived next to the app instead of in a separate docs repo.",
       },
       {
         emoji: "🧩",
-        text: "Built Vue docs components (feature cards, expandable lists, tags, note boxes) and registered them on the VitePress theme, so markdown pages could use richer layout than default VitePress shortcodes",
-      },
-      {
-        emoji: "🗺️",
-        text: "Added feature cards as a navigation pattern on docs pages, so readers could jump into a topic from a card grid instead of a long link list",
+        text: "Built custom Vue components for the docs, like feature cards, expandable lists, tags, and note boxes, that writers can drop into any markdown page. Feature cards double as navigation, so readers can jump into a topic from a grid instead of scanning a long list of links.",
       },
       {
         emoji: "🌗",
-        text: "Styled lists, headers, and cards to hold up on both light and dark docs backgrounds, including hard-coding colors where theme tokens washed out",
+        text: "Styled lists, headers, and cards to hold up on both light and dark backgrounds.",
       },
     ],
     stack: ["VitePress", "Vue", "TypeScript", "Markdown"],
@@ -310,19 +306,19 @@ export const professionalProjects: ProjectItem[] = [
     technicalHighlights: [
       {
         emoji: "🥾",
-        text: "Shipped a drop-in bootstrap with an operations queue, rather than making partners wait for the full script — they paste a head snippet once, call boot/open/hydrate immediately, and we can ship embed updates without asking them to change their install",
+        text: "Built a one-snippet install, so partners add the widget by pasting a short script into their site. It loads the full widget in the background, and anything a partner asks for before it’s ready, like opening the widget, waits in line and runs once it loads. Because the snippet never changes, Peddle can ship widget updates without partners touching their site.",
       },
       {
         emoji: "🪟",
-        text: "Ran the offer UI in an iframe instead of injecting React into the partner page, so their CSS and JS couldn’t break the flow — then used postMessage for open, close, and handover across origins",
+        text: "Ran the widget in an iframe on the partner’s page instead of mixing it into their code, so their styles and scripts can’t break it. The page and the widget pass simple messages back and forth to open, close, and hand off the seller.",
       },
       {
         emoji: "💧",
-        text: "Added partner hydrate to prefill known vehicle data and jump to the first unanswered step, so marketplace partners didn’t make sellers re-enter information they already had",
+        text: "Added prefill for partners that already know about the car, like a car marketplace. They pass in its details up front, and the widget fills in those answers and skips ahead to the first question the seller still needs to answer.",
       },
       {
         emoji: "🤝",
-        text: "Built the in-iframe questionnaire through offer creation and handover to Peddle Seller, so a lead started on a partner site could finish as a real Peddle offer",
+        text: "Built the questions inside the widget all the way through to a real offer, then handed the seller over to Peddle’s main site to finish the sale, so a lead that starts on a partner’s site ends up as an actual Peddle offer.",
       },
     ],
     media: [
